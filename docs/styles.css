@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+hr {
+  margin: 1rem 0;
+  height: 1px;
+  border: none;
+  background-color: hsl(240, 5%, 91%);
+}
+
+.something {
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-layout {
+  width: 55rem;
+  height: 28rem;
+  border-radius: 25px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.column {
+  flex: 45%;
+}
+
+/* --------
+FAQ text
+-------- */
+.text {
+  margin-right: 5rem;
+  margin-top: 3rem;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-container:hover {
+  cursor: pointer;
+}
+.text-container:hover > .question-container {
+  color: orange;
+}
+.text-container.active {
+  height: 3.5rem;
+}
+
+.question {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+.question-active {
+  /* font-size: 1rem; */
+  font-weight: 700;
+}
+.answer {
+  display: none;
+  overflow: hidden;
+}
+.answer.active {
+  display: block;
+  animation: fade ease 0.9s;
+}
+
+.arrow-container {
+  margin-top: 0.5rem;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+.arrow {
+  transform: rotate(0deg);
+  transition-duration: 1s;
+}
+.arrow.active {
+  transform: rotate(180deg);
+  transition-duration: 1s;
+}
+
+.row {
+  display: flex;
+}
+
+/* --------
+Image Layout
+-------- */
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.desktop {
+  position: absolute;
+  right: 175px;
+}
+.shadow {
+  right: 134px;
+  position: absolute;
+  top: -330px;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 1rem;
+}
+
+/* --------
+footer
+-------- */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.fade {
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
