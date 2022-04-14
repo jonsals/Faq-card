@@ -1,27 +1,26 @@
 const textContainer = document.getElementsByClassName("text-container");
 const question = document.getElementsByClassName("question");
-const answer = document.getElementsByClassName("answer");
-
-console.log(answer);
+const arrows = document.getElementsByClassName("arrow");
+const answers = document.getElementsByClassName("answer");
 
 for (var i = 0; i < textContainer.length; i++) {
   textContainer[i].addEventListener("click", function () {
-    resetActiveQuestion();
-    this.childNodes[1].childNodes[1].classList.add("question-active");
+    var qID = getIdNum(this.id);
+    var ans = answers[qID];
 
-    let arrow = this.childNodes[1].childNodes[3].childNodes[1];
-    let answer = this.childNodes[3].childNodes[1];
-
-    // resetAllAnswers();
-    arrow.classList.toggle("active");
-    this.classList.toggle("active");
-    if (answer.style.display === "block") {
-      answer.style.display = "none";
-      resetActiveQuestion();
-      resetAllAnswers();
+    if (ans.classList.contains("answer-active")) {
+      ans.classList.add("answer-inactive");
+      setTimeout(function () {
+        ans.classList.remove("answer-inactive");
+      }, 300);
+      ans.classList.remove("answer-active");
+      question[qID].classList.remove("question-active");
+      arrows[qID].classList.remove("arrow-active");
     } else {
-      answer.classList.toggle("active");
-      //   resetAllAnswers();
+      resetActiveQuestion();
+      ans.classList.add("answer-active");
+      question[qID].classList.add("question-active");
+      arrows[qID].classList.add("arrow-active");
     }
   });
 }
@@ -29,12 +28,11 @@ for (var i = 0; i < textContainer.length; i++) {
 function resetActiveQuestion() {
   for (var i = 0; i < question.length; i++) {
     question[i].classList.remove("question-active");
+    answers[i].classList.remove("answer-active");
+    arrows[i].classList.remove("arrow-active");
   }
 }
 
-function resetAllAnswers() {
-  for (var i = 0; i < answer.length; i++) {
-    answer[i].style.display = "none";
-    answer[i].classList.remove("active");
-  }
+function getIdNum(classId) {
+  return classId.replace(/\D/g, "");
 }

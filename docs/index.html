@@ -8,21 +8,22 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
     <link rel="stylesheet" href="styles.css" />
     <title>Frontend Mentor | FAQ Accordion Card</title>
-    <script src="/docs/index.js"></script>
   </head>
   <body>
     <div class="something">
       <div class="card-layout">
-        <div class="image-container column">
+        <div class="desktop-image column">
+          <div class="image-container">
+            <img class="shadow" src="images/bg-pattern-desktop.svg" />
+            <img class="desktop" src="images/illustration-woman-online-desktop.svg" />
+          </div>
           <img class="box" src="images/illustration-box-desktop.svg" />
-          <img class="shadow" src="images/bg-pattern-desktop.svg" />
-
-          <img class="desktop" src="images/illustration-woman-online-desktop.svg" />
         </div>
+
         <div class="column">
           <div class="text">
             <h1 class="fade fadeOut">FAQ</h1>
-            <div class="text-container">
+            <div id="q0" class="text-container">
               <div class="row question-container">
                 <span class="question"> How many team members can I invite? </span>
                 <span class="arrow-container">
@@ -38,7 +39,7 @@
             </div>
             <hr />
 
-            <div class="text-container">
+            <div id="q1" class="text-container">
               <div class="row question-container">
                 <span class="question"> What is the maximum file upload size? </span>
                 <span class="arrow-container">
@@ -54,7 +55,7 @@
 
             <hr />
 
-            <div class="text-container">
+            <div id="q2" class="text-container">
               <div class="row question-container">
                 <span class="question"> How do I reset my password? </span>
                 <span class="arrow-container">
@@ -70,7 +71,7 @@
             </div>
             <hr />
 
-            <div class="text-container">
+            <div id="q3" class="text-container">
               <div class="row question-container">
                 <span class="question"> Can I cancel my subscription? </span>
                 <span class="arrow-container">
@@ -85,7 +86,7 @@
             </div>
             <hr />
 
-            <div class="text-container">
+            <div id="q4" class="text-container">
               <div class="row question-container">
                 <span class="question"> Do you provide additional support? </span>
                 <span class="arrow-container">
@@ -124,4 +125,5 @@
       Coded by <a href="#">Your Name Here</a>.
     </div> -->
   </body>
+  <script src="/docs/index.js"></script>
 </html>

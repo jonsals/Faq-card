@@ -7,11 +7,16 @@ body {
   font-weight: 400;
 }
 
+p {
+  max-width: 60ch;
+  line-height: 1.5;
+}
+
 h1 {
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 hr {
-  margin: 1rem 0;
+  margin: 0.7rem 0;
   height: 1px;
   border: none;
   background-color: hsl(240, 5%, 91%);
@@ -24,6 +29,9 @@ hr {
   justify-content: center;
   align-items: center;
 }
+/* --------
+Card Layout
+-------- */
 
 .card-layout {
   width: 55rem;
@@ -32,10 +40,51 @@ hr {
   background-color: white;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
 }
 .column {
   flex: 45%;
+}
+
+/* --------
+Image Layout
+-------- */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  /* user-drag: none; */
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.desktop {
+  overflow: hidden;
+  position: absolute;
+  right: 90px;
+  top: 30px;
+  z-index: 0;
+}
+.shadow {
+  right: 95px;
+  position: absolute;
+  top: -330px;
+}
+
+.box {
+  position: relative;
+  left: -113px;
+  bottom: 319px;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 1rem;
 }
 
 /* --------
@@ -54,16 +103,11 @@ FAQ text
 .text-container:hover {
   cursor: pointer;
 }
-.text-container:hover > .question-container {
-  color: orange;
-}
-.text-container.active {
-  height: 3.5rem;
-}
 
 .question {
   font-size: 1rem;
-  margin-top: 0.5rem;
+  /* margin-top: 0.5rem; */
+  font-weight: 400;
 }
 .question-active {
   /* font-size: 1rem; */
@@ -73,9 +117,14 @@ FAQ text
   display: none;
   overflow: hidden;
 }
-.answer.active {
+.answer-active {
   display: block;
   animation: fade ease 0.9s;
+}
+
+.answer-inactive {
+  display: block;
+  animation: fadeOut ease 0.9s;
 }
 
 .arrow-container {
@@ -87,39 +136,13 @@ FAQ text
   transform: rotate(0deg);
   transition-duration: 1s;
 }
-.arrow.active {
+.arrow-active {
   transform: rotate(180deg);
   transition-duration: 1s;
 }
 
 .row {
   display: flex;
-}
-
-/* --------
-Image Layout
--------- */
-
-.image-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.desktop {
-  position: absolute;
-  right: 175px;
-}
-.shadow {
-  right: 134px;
-  position: absolute;
-  top: -330px;
-}
-
-.hidden {
-  visibility: hidden;
-  height: 1rem;
 }
 
 /* --------
@@ -133,11 +156,56 @@ footer
   color: hsl(228, 45%, 44%);
 }
 
+/* .mobile {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+
+  background-color: rgb(176, 151, 151);
+} */
 @keyframes fade {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 499px) {
+  body {
+    font-size: 1 px;
+  }
+  h1 {
+    text-align: center;
+  }
+  .desktop-image {
+    display: none;
+  }
+
+  .card-layout {
+    padding: 1.2rem;
+    margin: 1rem;
+    flex-direction: column;
+    width: 22rem;
+    height: 36rem;
+  }
+  .text {
+    margin-right: 0;
+  }
+
+  .column {
+    flex: 100%;
   }
 }
