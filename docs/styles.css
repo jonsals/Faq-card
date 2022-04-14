@@ -133,9 +133,6 @@ footer
   color: hsl(228, 45%, 44%);
 }
 
-.fade {
-}
-
 @keyframes fade {
   0% {
     opacity: 0;
