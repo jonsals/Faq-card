@@ -261,7 +261,7 @@ footer
   }
 
   .image-container-a::before {
-    content: url(/docs/images/illustration-woman-online-mobile.svg);
+    content: url(images/illustration-woman-online-mobile.svg);
     position: relative;
     top: calc(100% - 6rem);
   }
